@@ -1,0 +1,22 @@
+<ion-view view-title="Search">
+  <ion-content>
+<form name="form" data-ng-submit="search(searchValue)" class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="text" placeholder="Search" ng-model="searchValue">   
+  </label>
+    <button class="button button-balanced">GO</button>
+
+</form>
+      
+      <ion-slide-box on-slide-changed="slideHasChanged($index)">
+  <ion-slide ng-repeat= "product in products">
+      <img ng-src="{{product.image}}"/>
+      <h2>Name:{{product.name}}</h2>
+      <h3>Sales Price:{{product.salePrice}}</h3>
+      <h4>Sku:{{product.sku}}</h4> 
+  </ion-slide>
+</ion-slide-box>
+
+  </ion-content>
+</ion-view>
